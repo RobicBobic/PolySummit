@@ -143,48 +143,7 @@ function App() {
     }
   ];
 
-  const features = [
-    {
-      icon: '',
-      title: 'Instant Settlement',
-      description: 'Markets resolve within minutes of event outcomes. Your winnings are available immediately—no waiting, no delays.'
-    },
-    {
-      icon: '',
-      title: 'Market Intelligence',
-      description: 'AI-powered insights analyze thousands of data points to surface opportunities and provide real-time market sentiment analysis.'
-    },
-    {
-      icon: '',
-      title: 'Cross-Platform Trading',
-      description: 'Seamless experience across web, iOS, and Android. Your portfolio syncs instantly across all devices.'
-    },
-    {
-      icon: '',
-      title: 'Regulatory Compliance',
-      description: 'Fully CFTC-regulated as a Designated Contract Market. Your funds are protected in segregated FDIC-insured accounts.'
-    },
-    {
-      icon: '',
-      title: 'Zero Trading Fees',
-      description: 'No commissions, no hidden fees, no spreads. What you see is what you pay. Keep 100% of your profits.'
-    },
-    {
-      icon: '',
-      title: 'Advanced Order Types',
-      description: 'Limit orders, stop losses, bracket orders, and algorithmic strategies. Professional tools for sophisticated traders.'
-    },
-    {
-      icon: '',
-      title: 'Global Markets',
-      description: '1,200+ active markets across politics, finance, sports, entertainment, and world events. If it\'s newsworthy, it\'s tradeable.'
-    },
-    {
-      icon: '',
-      title: 'Deep Liquidity',
-      description: '$2.5B+ in total volume. Our automated market maker ensures you can always buy or sell at competitive prices.'
-    }
-  ];
+  // Features array removed - not used in current design
 
   const pricingPlans = [
     {
@@ -301,11 +260,11 @@ function App() {
           </button>
 
           <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
-            <a onClick={() => scrollToSection('markets')}>Markets</a>
-            <a onClick={() => scrollToSection('how-it-works')}>How It Works</a>
-            <a onClick={() => scrollToSection('features')}>Features</a>
-            <a onClick={() => scrollToSection('pricing')}>Pricing</a>
-            <a onClick={() => scrollToSection('faq')}>FAQ</a>
+            <a href="#markets" onClick={() => scrollToSection('markets')}>Markets</a>
+            <a href="#how-it-works" onClick={() => scrollToSection('how-it-works')}>How It Works</a>
+            <a href="#features" onClick={() => scrollToSection('features')}>Features</a>
+            <a href="#pricing" onClick={() => scrollToSection('pricing')}>Pricing</a>
+            <a href="#faq" onClick={() => scrollToSection('faq')}>FAQ</a>
             <button 
               className="btn-primary"
               onClick={() => openModal(
@@ -423,7 +382,7 @@ function App() {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Trending Markets</h2>
-            <a className="view-all-link" onClick={() => scrollToSection('markets')}>View All Markets →</a>
+            <a href="#markets" className="view-all-link" onClick={() => scrollToSection('markets')}>View All Markets →</a>
           </div>
           
           <div className="markets-grid">
@@ -735,42 +694,42 @@ function App() {
               <h4>Poly Summit</h4>
               <p>The world's leading prediction market platform. Trade on real-world events with confidence.</p>
               <div className="social-links">
-                <a onClick={() => openModal('Twitter', 'Follow us @PolySummit for market updates and insights')}>Twitter</a>
-                <a onClick={() => openModal('Discord', 'Join our Discord community of 50K+ traders')}>Discord</a>
-                <a onClick={() => openModal('Telegram', 'Get instant alerts in our Telegram channel')}>Telegram</a>
+                <a href="#twitter" onClick={() => openModal('Twitter', 'Follow us @PolySummit for market updates and insights')}>Twitter</a>
+                <a href="#discord" onClick={() => openModal('Discord', 'Join our Discord community of 50K+ traders')}>Discord</a>
+                <a href="#telegram" onClick={() => openModal('Telegram', 'Get instant alerts in our Telegram channel')}>Telegram</a>
               </div>
             </div>
             
             <div className="footer-section">
               <h4>Product</h4>
-              <a onClick={() => scrollToSection('markets')}>Markets</a>
-              <a onClick={() => scrollToSection('pricing')}>Pricing</a>
-              <a onClick={() => openModal('API', 'Full REST and WebSocket API available for Pro and Enterprise users. Documentation at docs.polysummit.com')}>API</a>
-              <a onClick={() => openModal('Mobile Apps', 'Available on iOS and Android. Download from the App Store or Google Play.')}>Mobile Apps</a>
+              <a href="#markets" onClick={() => scrollToSection('markets')}>Markets</a>
+              <a href="#pricing" onClick={() => scrollToSection('pricing')}>Pricing</a>
+              <a href="#api" onClick={() => openModal('API', 'Full REST and WebSocket API available for Pro and Enterprise users. Documentation at docs.polysummit.com')}>API</a>
+              <a href="#mobile" onClick={() => openModal('Mobile Apps', 'Available on iOS and Android. Download from the App Store or Google Play.')}>Mobile Apps</a>
             </div>
             
             <div className="footer-section">
               <h4>Resources</h4>
-              <a onClick={() => openModal('Help Center', 'Visit help.polysummit.com for tutorials, guides, and troubleshooting')}>Help Center</a>
-              <a onClick={() => openModal('Blog', 'Read market analysis, trading strategies, and platform updates at blog.polysummit.com')}>Blog</a>
-              <a onClick={() => openModal('Research', 'Access our research papers on prediction market accuracy and methodology')}>Research</a>
-              <a onClick={() => openModal('Status', 'Check system status and uptime at status.polysummit.com')}>Status</a>
+              <a href="#help" onClick={() => openModal('Help Center', 'Visit help.polysummit.com for tutorials, guides, and troubleshooting')}>Help Center</a>
+              <a href="#blog" onClick={() => openModal('Blog', 'Read market analysis, trading strategies, and platform updates at blog.polysummit.com')}>Blog</a>
+              <a href="#research" onClick={() => openModal('Research', 'Access our research papers on prediction market accuracy and methodology')}>Research</a>
+              <a href="#status" onClick={() => openModal('Status', 'Check system status and uptime at status.polysummit.com')}>Status</a>
             </div>
             
             <div className="footer-section">
               <h4>Company</h4>
-              <a onClick={() => openModal('About Us', 'Poly Summit is a CFTC-regulated prediction market founded in 2020. Our mission: democratize access to collective intelligence.')}>About</a>
-              <a onClick={() => openModal('Careers', 'Join our team! We\'re hiring engineers, traders, and market operators. careers@polysummit.com')}>Careers</a>
-              <a onClick={() => openModal('Press', 'Media inquiries: press@polysummit.com')}>Press</a>
-              <a onClick={() => openModal('Contact', 'Email: support@polysummit.com | Phone: 1-800-POLY-SUM | Live chat available 24/7')}>Contact</a>
+              <a href="#about" onClick={() => openModal('About Us', 'Poly Summit is a CFTC-regulated prediction market founded in 2020. Our mission: democratize access to collective intelligence.')}>About</a>
+              <a href="#careers" onClick={() => openModal('Careers', 'Join our team! We\'re hiring engineers, traders, and market operators. careers@polysummit.com')}>Careers</a>
+              <a href="#press" onClick={() => openModal('Press', 'Media inquiries: press@polysummit.com')}>Press</a>
+              <a href="#contact" onClick={() => openModal('Contact', 'Email: support@polysummit.com | Phone: 1-800-POLY-SUM | Live chat available 24/7')}>Contact</a>
             </div>
             
             <div className="footer-section">
               <h4>Legal</h4>
-              <a onClick={() => openModal('Terms of Service', 'Read our full terms at polysummit.com/terms')}>Terms</a>
-              <a onClick={() => openModal('Privacy Policy', 'We protect your data. Read our privacy policy at polysummit.com/privacy')}>Privacy</a>
-              <a onClick={() => openModal('Risk Disclosure', 'Trading involves risk. Only invest what you can afford to lose. Read full disclosure at polysummit.com/risk')}>Risk Disclosure</a>
-              <a onClick={() => openModal('Regulation', 'Poly Summit is regulated by the CFTC as a Designated Contract Market (DCM). License #123456.')}>Regulation</a>
+              <a href="#terms" onClick={() => openModal('Terms of Service', 'Read our full terms at polysummit.com/terms')}>Terms</a>
+              <a href="#privacy" onClick={() => openModal('Privacy Policy', 'We protect your data. Read our privacy policy at polysummit.com/privacy')}>Privacy</a>
+              <a href="#risk" onClick={() => openModal('Risk Disclosure', 'Trading involves risk. Only invest what you can afford to lose. Read full disclosure at polysummit.com/risk')}>Risk Disclosure</a>
+              <a href="#regulation" onClick={() => openModal('Regulation', 'Poly Summit is regulated by the CFTC as a Designated Contract Market (DCM). License #123456.')}>Regulation</a>
             </div>
           </div>
           
